@@ -48,3 +48,14 @@ body {
     cursor: pointer;
     border-radius: 2px;
 }
+
+.bucket{
+    background-color: rgb(235, 209, 227);
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
