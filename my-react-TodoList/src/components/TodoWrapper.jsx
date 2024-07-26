@@ -15,8 +15,8 @@ function TodoWrapper() {
     <div className="wrapper">
       <h1>購物清單</h1>
       <CreateForms handleBucket={handleBucket}/>
-      {buckets.map((item) => {
-        return <BucketList bucket={item} />
+      {buckets.map((bucket) => {
+        return <BucketList bucket={bucket} />
       })}
     </div>
   );

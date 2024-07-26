@@ -10,6 +10,7 @@ function CreateForms({handleBucket}) {
   const handleSubmit = (e) =>{
     e.preventDefault();
     handleBucket(inputText);
+    setInputText('')
   }
 
 
