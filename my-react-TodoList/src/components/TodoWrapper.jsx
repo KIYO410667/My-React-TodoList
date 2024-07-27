@@ -8,7 +8,7 @@ function TodoWrapper() {
   const handleBucket = (inputText) => {
     if (inputText !== ''){
       setBuckets([...buckets, 
-        { inputText: inputText, id: Math.random(), isClicked: false}]);
+        { inputText: inputText, id: Math.random(), isClicked: false, isEditing: false}]);
     }
   };
 
@@ -28,6 +28,22 @@ function TodoWrapper() {
     }))
   }
 
+  const toggleEditing = (id) => {
+    setBuckets(buckets.map((bucket) =>{
+      return bucket.id === id
+      ? {...bucket, isEditing: !bucket.is}
+      : bucket
+    }))
+  }
+
+  const toggleCompleted = (id, completedText) => {
+    setBuckets(buckets.map((bucket) => {
+      return bucket.id === id
+      ? {...bucket, isEditing: false, inputText: completedText}
+      : bucket
+    }))
+  }
+
   return (
     <div className="wrapper">
       <h1>購物清單</h1>
@@ -39,6 +55,8 @@ function TodoWrapper() {
             key={bucket.id}
             deleteBucket={deleteBucket}
             toggleOnClickBucket={toggleOnClickBucket}
+            toggleEditing={toggleEditing}
+            toggleCompleted={toggleCompleted}
           />
         );
       })}

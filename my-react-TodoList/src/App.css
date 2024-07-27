@@ -40,11 +40,12 @@ body {
     color: white;
 }
 .form-container > button {
-    border: none;
+    border: solid 2px;
+    border-color: rgb(165, 94, 189);
     width: 20%;
     color: white;
     background-color: rgb(179, 70, 201);
-    margin:1px;
+    margin: 0px;
     cursor: pointer;
     border-radius: 2px;
 }
@@ -62,5 +63,11 @@ body {
 
 .clicked{
     opacity: 0.4;
-    text-decoration: line-through 5px black;
+    text-decoration: line-through 2px black;
+}
+
+.edit {
+    height: 40px;
+    background-color: rgb(230, 183, 209);
+    border: none;
 }
