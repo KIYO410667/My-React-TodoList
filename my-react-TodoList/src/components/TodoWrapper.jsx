@@ -6,8 +6,10 @@ function TodoWrapper() {
   const [buckets, setBuckets] = useState([]);
 
   const handleBucket = (inputText) => {
-    setBuckets([...buckets, 
-      { inputText: inputText, id: Math.random(), isCompleted: false}]);
+    if (inputText !== ''){
+      setBuckets([...buckets, 
+        { inputText: inputText, id: Math.random(), isClicked: false}]);
+    }
   };
 
   const deleteBucket = (id) => {
@@ -17,6 +19,14 @@ function TodoWrapper() {
       })
     );
   };
+
+  const toggleOnClickBucket = (id) =>{
+    setBuckets(buckets.map((bucket) => {
+        return bucket.id === id  //if this condition
+        ? {...bucket, isClicked: !bucket.isClicked} //true
+        : bucket //false
+    }))
+  }
 
   return (
     <div className="wrapper">
@@ -28,6 +38,7 @@ function TodoWrapper() {
             bucket={bucket}
             key={bucket.id}
             deleteBucket={deleteBucket}
+            toggleOnClickBucket={toggleOnClickBucket}
           />
         );
       })}
