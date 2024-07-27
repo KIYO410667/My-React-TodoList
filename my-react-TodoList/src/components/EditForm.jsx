@@ -17,11 +17,11 @@ function EditForm({bucket, toggleCompleted}) {
     <form className="form-container edit" onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="輸入要買的東西"
+        placeholder="輸入想完成的事"
         value={inputText}
         onChange={handleTodo}
       ></input>
-      <button type="submit">完成</button>
+      <button type="submit">確認</button>
     </form>
   );
 
